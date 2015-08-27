@@ -19,6 +19,10 @@ center{
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+.hidden{
+	display: none;
+}
+
 #openOrderBox{
 	border-style: solid;
 	border-color: yellow;
@@ -32,7 +36,7 @@ center{
 #openOrderHeader{
 	color:blue;
 }
-#newOrderLI{
+.newOrderLI{
 	font-size: 15px;
 	position: relative;
 	width: 100%;
@@ -55,18 +59,34 @@ center{
 	width: 43%;
 	height: 550px;
 }
+#receiptContainer{
+	position: relative;
+		width: 100%;
+	height: 330px;
+}
+
+.receiptItem{
+	text-align: center;
+}
 
 #totalForm{
+	position: relative;
 	color: white ;
 	font-weight: bold;
 	position: relative;
-	top: 63%;
+	top: 67%;
 	width: 100%;
 	height: 12%;
 }
 
 .total{
 
+}
+#totalDiv{
+	position: relative;
+	right:34px;
+	width: 100%;
+	
 }
 #subtotalLabel{
 	position: relative;
@@ -75,6 +95,8 @@ center{
 #subtotal{
 	position: relative;
 	left:32%;
+	font-weight: bold;
+	font-size: 100%;
 }
 
 #taxLabel{
@@ -84,6 +106,8 @@ center{
 #tax{
 	position: relative;
 	left:34.9%;
+	font-weight: bold;
+	font-size: 100%;
 }
 
 #totalLabel{
@@ -92,13 +116,15 @@ center{
 }
 
 #total{
-position: relative;
+	position: relative;
 	left:34%;
+	font-weight: bold;
+	font-size: 100%;
 }
 
 #buttonBox{
 	position: relative;
-	top: 62%;
+	top: 1%;
 	width: 99%;
 	height: 10%;
 	border-style: solid;
@@ -140,7 +166,7 @@ position: relative;
 	margin: 0 auto;
 }
 
-#menuItem{
+.menuItem{
 	font-size: 15px;
 	font-weight: bold;
 	margin-left: 3px;

@@ -15,7 +15,7 @@ jQuery(function(){
 	{name: "Jaskar Jujubes", price: 30.31},
 	{name: "Toti's Chocotruffle", price: 0.75},
 	{name: "Yuka's Peppermint Patties", price: 0.12 },
-	{name: "Eric Kim's Kimchee", price: 0.01},
+	{name: "Eric's altoid-shaped questionable orange tablet candy", price: 0.01},
 	{name: "Pam's Pineapple", price: 0.45 },
 	{name: "Pan's Pancakes", price: 0.71},
 	{name: "Dennis's DubbleBubble", price: 0.25 },
@@ -23,7 +23,7 @@ jQuery(function(){
 	{name: "Bobby's Frozen Bananas", price: 3.00 },
 	{name: "Joy's Soy Candy", price: 0.99 },
 	{name: "Steph's Sour Patch Kids", price: 0.43 },
-	{name: "Hayleys Honey", price: 0.85},
+	{name: "Jennifers Blue Sesame Pop", price: 0.85},
 	{name: "Smither's Chocolate Smothered Cashews", price: 0.65},
 	];
 
@@ -31,47 +31,57 @@ jQuery(function(){
 /////////////////////////////////////////////////
 	// Populate the menu with Pieces of Candy
 	var menu = $("#menu");
+	var orderArray = [];
+
 	var makeMenu = function(){
-		candy.forEach(function(pieceOfCandy){
-	    var menuItemDiv = $("<button>").attr("id", "menuItem");
-			menuItemDiv.append(pieceOfCandy.name + "\n" + "$"+ pieceOfCandy.price);
-			menu.append(menuItemDiv);
+		candy.forEach(function(pieceOfCandy, index){
+	    var menuItemDiv = $("<button>", {id: index, class: "menuItem"});
+	    
+		menuItemDiv.append(pieceOfCandy.name + "\n" + "$"+ pieceOfCandy.price);
+		menu.append(menuItemDiv);
 		})
 	};
+
 	makeMenu();
 /////////////////////////////////////////////////
-	// on the click of New order, 
-	// prompt the cashier to enter a name.
-	// append that name to a variable
-	// with an empty array []
+	
 	var newOrderButton = $("#newOrderButton");
-	var newOrderUL = $("#newOrderUL")
-	var newOrderArray = [];
+	var newOrderUL = $("#newOrderUL");
 
 	newOrderButton.on("click", function(event){
-		event.preventDefault()
-		var newOrderLI = $("<button>").attr("id", "newOrderLI")
+		event.preventDefault();
+		var newOrderLI = $("<button>").attr("class", "newOrderLI");
 		var customerName = prompt("What name would you like under your order?");
-		newOrderLI.append(customerName)
-		newOrderUL.append(newOrderLI)
+		newOrderLI.append(customerName);
+		newOrderUL.append(newOrderLI);
+		
+		orderArray.push({name:customerName});
+		console.log(orderArray)
+
+	});
+
+	$(".menuItem").on("click", function(event){
+		event.preventDefault();
+		var receiptUL = $("#receipt");
+		var id = $(event.currentTarget).attr("id");
+		console.log(candy[id]);
+
+		var receiptLI = $("<li>").attr("class", "receiptItem");
+		receiptLI.append(candy[id].name +" "+candy[id].price);
+		receiptUL.append(receiptLI);
 	})
 
-/////////////////////////////////////////////////
-	// PAY BUTTON FUNCTION 
-	// var payButton = $("#payButton")
+	$("#openOrderBox").on("click", function(event){
+		var theButton = $(event.currentTarget);
+		orderArray.forEach(function(orderName, index, array){
+			theButton.on("click", function(event){
+				console.log(orderName);
+			});
+		});
+	});
 
-	// payButton.on("click", function(){
-	// 	var cashOrCredit= prompt("Would you like to pay cash or credit?")
-	// 	if(cashOrCredit === "credit"){
-	// 		alert("Sorry, Cash only")
-	// 	}
-	// })
+
+/////////////////////////////////////////////////
+	//click the buttons and grab the object
 
 });//END OF jQUERY
-
-
-
-
-
-
-
