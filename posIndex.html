@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Calvins Candy Shop</title>
+	<link rel="stylesheet" href="pos.css" />
+    <script type="text/javascript" src= "http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src= "./pos.js"></script>
+</head>
+<body>
+
+  <center>Calvin's Candy Shop</center>
+
+
+	<!-- OPEN ORDERS -->
+	<div id="openOrderBox">
+		<h1 id="openOrderHeader">Open Orders</h1>
+			
+			<ul id="newOrderUL">
+				<!-- Use jQuery to create LI for each order taken -->
+				
+			</ul>
+
+	</div>
+
+	<!-- CURRENT ORDERS -->
+	<div id="currentOrderBox">
+			<h1 id="currentOrderBoxHeader">Current Order</h1>
+			<ul>
+			
+			</ul>
+
+			<form id="totalForm">
+				<label id="subtotalLabel">Subtotal:</label>
+				<input type="text" placeholder="$" id="subtotal" class="total"><br>
+
+				<label id="taxLabel">Tax:</label>
+				<input type="text" placeholder="$" id="tax" class="total"><br>
+
+				<label id="totalLabel">Total:</label>
+				<input type="text" placeholder="$" id="total" class="total"><br>
+			</form>
+	
+
+			<form id="buttonBox">
+				<button id="newOrderButton"    class="button">NEW ORDER</button>
+				<button id="removeOrderbutton" class="button">REMOVE ORDER</button>
+				<button id="payButton" 		   class="button">PAY</button>
+				<button id="discountButton"    class="button">DISCOUNT</button>
+			</form>
+
+	</div>
+
+	<!-- MENU ITEMS -->
+	<div id="menuBox">
+		<h1 id="candyMenuHeader">Candy Menu</h1>
+		<form id="menu">
+			<!-- write a function to populate this menu with menuItems whil
+			giving it an ID of menu ITEM -->
+			<!-- <div id="menuItem">1</div>
+			<div id="menuItem">2</div>
+			<div id="menuItem">3</div>
+			<div id="menuItem">4</div>
+			<div id="menuItem">5</div>
+			<div id="menuItem">6</div>
+			<div id="menuItem">7</div>
+			<div id="menuItem">8</div>
+			<div id="menuItem">9</div> -->
+		</form>
+	</div>
+<p id="trademark">&#0153;Calvin's Candy Shop</p>
+	<div id="music">
+		<iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A2mpFm3f7QmdsVtSAIICEB7" width="100" height="100" frameborder="0" allowtransparency="true"></iframe>
+	</div>
+</body>
+</html>

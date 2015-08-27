@@ -12,7 +12,19 @@ Meiji - "meiji's melt in your mouth marshmallows"
 Josh - "Josh's Jelly Beans"
 Pierre - Pierre Douce chocolate
 Toti - Valrhonalicious
-Jaskar - Jaskar Jujubes
-Nick - Marsh marshmallows
+Jaskar - "Jaskar Jujubes"
+Nick - "Marshall marshmallows"
+Raquel - "Raquel's roasted and toasted smores"
+Jacob - "Jacob JellyBeans"
+
+-====OPEN ORDER====-
+
+
+-====CURRENT ORDER====-
+-Should have remove order and add order
+, for remove order, we should attach a checkbox 
+that if clicked itll remove the item
+
+-====MENU LISTINGS====-
 
 
