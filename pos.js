@@ -50,14 +50,15 @@ jQuery(function(){
 
 	newOrderButton.on("click", function(event){
 		event.preventDefault();
-		var newOrderLI = $("<button>").attr("class", "newOrderLI");
 		var customerName = prompt("What name would you like under your order?");
+		orderArray.push({name:customerName});
+		var newOrderLI = $("<button>", {class: "newOrderLI", id: orderArray.length -1})
+
 		newOrderLI.append(customerName);
 		newOrderUL.append(newOrderLI);
-		
-		orderArray.push({name:customerName});
 		console.log(orderArray)
 
+		doThis();
 	});
 
 	$(".menuItem").on("click", function(event){
@@ -71,17 +72,21 @@ jQuery(function(){
 		receiptUL.append(receiptLI);
 	})
 
-	$("#openOrderBox").on("click", function(event){
-		var theButton = $(event.currentTarget);
-		orderArray.forEach(function(orderName, index, array){
-			theButton.on("click", function(event){
-				console.log(orderName);
+	 function doThis(){
+	 	$("#newOrderUL > button").click(function(event){
+			 var id = $(event.currentTarget).attr("id");
+			 console.log(orderArray[id]);
 			});
-		});
-	});
+	 }
+
+function newOpenOrder(index){
+	console.log(index); 
+}
 
 
-/////////////////////////////////////////////////
-	//click the buttons and grab the object
+
+
 
 });//END OF jQUERY
+
+
