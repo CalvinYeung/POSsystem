@@ -48,17 +48,23 @@ jQuery(function(){
 	var newOrderButton = $("#newOrderButton");
 	var newOrderUL = $("#newOrderUL");
 
+	//creates the buttons for each order
 	newOrderButton.on("click", function(event){
 		event.preventDefault();
 		var customerName = prompt("What name would you like under your order?");
 		orderArray.push({name:customerName});
-		var newOrderLI = $("<button>", {class: "newOrderLI", id: orderArray.length -1})
+		var newOrderLI = $("<button>", {class: "newOrderLI", id: orderArray.length -1});
 
+		//appending
 		newOrderLI.append(customerName);
 		newOrderUL.append(newOrderLI);
-		console.log(orderArray)
+		console.log(orderArray);
 
-		doThis();
+		//opens the order object
+	 	$("#newOrderUL > .newOrderLI ").on("click",function(event){
+			 var id = $(event.currentTarget).attr("id");
+			 console.log(orderArray[id].name);
+			});
 	});
 
 	$(".menuItem").on("click", function(event){
@@ -72,17 +78,7 @@ jQuery(function(){
 		receiptUL.append(receiptLI);
 	})
 
-	 function doThis(){
-	 	$("#newOrderUL > button").click(function(event){
-			 var id = $(event.currentTarget).attr("id");
-			 console.log(orderArray[id]);
-			});
-	 }
-
-function newOpenOrder(index){
-	console.log(index); 
-}
-
+	 
 
 
 
