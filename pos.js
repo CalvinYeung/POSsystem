@@ -52,7 +52,7 @@ jQuery(function(){
 	newOrderButton.on("click", function(event){
 		event.preventDefault();
 		var customerName = prompt("What name would you like under your order?");
-		orderArray.push({name:customerName});
+		orderArray.push({customerName:customerName, items:[], price:[]});
 		var newOrderLI = $("<button>", {class: "newOrderLI", id: orderArray.length -1});
 
 		//appending
@@ -60,11 +60,16 @@ jQuery(function(){
 		newOrderUL.append(newOrderLI);
 		console.log(orderArray);
 
+		newOrderLI.on("click",function(event){
+		var id = $(event.currentTarget).attr("id");
+		console.log(orderArray[id]);
+		});
+
 		//opens the order object
-	 	$("#newOrderUL > .newOrderLI ").on("click",function(event){
-			 var id = $(event.currentTarget).attr("id");
-			 console.log(orderArray[id].name);
-			});
+	 	// $(".newOrderLI:last-child").on("click",function(event){
+			//  var id = $(event.currentTarget).attr("id");
+			//  console.log(orderArray[id].name);
+			// });
 	});
 
 	$(".menuItem").on("click", function(event){
