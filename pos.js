@@ -1,30 +1,30 @@
 jQuery(function(){
 	var candy = [
-	{name: "Calvin's Crack Candy Cane", price: 133.37},
-	{name: "Meiji's Melt In Your Mouth Marsmallows", price: 0.25 },
-	{name: "Josh's JellyBeans", price: 0.55 },
-	{name: "Harrison's Trixies Treats", price: 1.02 },
-	{name: "Brian's Schweddy Balls", price: 0.99 },
-	{name: "Ed's Edibles", price: 0.05},
-	{name: "Zoe's Zesty Zucchini", price: 0.18 },
-	{name: "Jacob Juicy", price: 0.23 },
-	{name: "Raquel's Roasted and Toasted Smores", price: 0.54 },
-	{name: "Marshall Marshmallow", price: 0.75 },
-	{name: "Mohamed KitKat", price: 0.95},
-	{name: "Pierre Douce Chocolate", price: 0.21 },
-	{name: "Jaskar Jujubes", price: 30.31},
-	{name: "Toti's Chocotruffle", price: 0.75},
-	{name: "Yuka's Peppermint Patties", price: 0.12 },
-	{name: "Eric's altoid-shaped questionable orange tablet candy", price: 0.01},
-	{name: "Pam's Pineapple", price: 0.45 },
-	{name: "Pan's Pancakes", price: 0.71},
-	{name: "Dennis's DubbleBubble", price: 0.25 },
-	{name: "Jaden's Jawbreakers", price: 0.23 },
-	{name: "Bobby's Frozen Bananas", price: 3.00 },
-	{name: "Joy's Soy Candy", price: 0.99 },
-	{name: "Steph's Sour Patch Kids", price: 0.43 },
-	{name: "Jennifers Blue Sesame Pop", price: 0.85},
-	{name: "Smither's Chocolate Smothered Cashews", price: 0.65},
+	{name: "Calvin's Crack Candy Cane", price: 13337},
+	{name: "Meiji's Melt In Your Mouth Marsmallows", price: 25 },
+	{name: "Josh's JellyBeans", price: 55 },
+	{name: "Harrison's Trixies Treats", price: 10.00 },
+	{name: "Brian's Schweddy Balls", price: 99 },
+	{name: "Ed's Edibles", price: 5},
+	{name: "Zoe's Zesty Zucchini", price: 8 },
+	{name: "Jacob Juicy", price: 23 },
+	{name: "Raquel's Roasted and Toasted Smores", price: 54 },
+	{name: "Marshall Marshmallow", price: 75 },
+	{name: "Mohamed KitKat", price: 95},
+	{name: "Pierre Douce Chocolate", price: 21 },
+	{name: "Jaskar Jujubes", price: 31},
+	{name: "Toti's Chocotruffle", price: 75},
+	{name: "Yuka's Peppermint Patties", price: 12 },
+	{name: "Eric's altoid-shaped questionable orange tablet candy", price: 1},
+	{name: "Pam's Pineapple", price: 45 },
+	{name: "Pan's Pancakes", price: 71},
+	{name: "Dennis's DubbleBubble", price: 25 },
+	{name: "Jaden's Jawbreakers", price: 23 },
+	{name: "Bobby's Frozen Bananas", price: 30 },
+	{name: "Joy's Soy Candy", price: 99 },
+	{name: "Steph's Sour Patch Kids", price: 43 },
+	{name: "Jennifers Blue Sesame Pop", price: 85},
+	{name: "Smither's Chocolate Smothered Cashews", price: 65},
 	];
 
 /////////////////////////////////////////////////
@@ -45,43 +45,59 @@ jQuery(function(){
 /////////////////////////////////////////////////
 	var newOrderButton = $("#newOrderButton");
 	var newOrderUL = $("#newOrderUL");
-
+	var orderToBePopulated;
 	//creates the buttons for each order
 	newOrderButton.on("click", function(event){
 		event.preventDefault();
 		var customerName = prompt("What name would you like under your order?");
 		orderArray.push({customerName:customerName, items:[]});
 		var newOrderLI = $("<button>", {class: "newOrderLI", id: orderArray.length -1});
-
+		orderToBePopulated = orderArray[orderArray.length -1].items
 		//appending
 		newOrderLI.append(customerName);
 		newOrderUL.append(newOrderLI);
 		console.log(orderArray);
 
+
 		//clicking the openOrders
-		var orderToBePopulated = newOrderLI.on("click",function(event){
+		newOrderLI.on("click",function(event){
 			var id = $(event.currentTarget).attr("id");
-			 console.log(orderArray[id].items)
-			 return orderArray[id].items
+			console.log(orderArray[id].items)
+			orderToBePopulated = orderArray[id].items
+			showOrder();
 			});
 
+		});
+
 		$(".menuItem").on("click", function(event){
-		event.preventDefault();
-		var receiptUL = $("#receipt");
-		var id = $(event.currentTarget).attr("id");
-		orderToBePopulated.push(candy[id])
-		console.log(candy[id]);
+			event.preventDefault();
+			var id = $(event.currentTarget).attr("id");
+			orderToBePopulated.push(candy[id])
+			console.log(candy[id]);
+			showOrder();
 
-		// var receiptLI = $("<li>").attr("class", "receiptItem");
-		// receiptLI.append(candy[id].name +" "+candy[id].price);
-		// receiptUL.append(receiptLI);
-	})
+		})
 
-	});
+		var showOrder = function(){
+				var receiptUL = $("#receipt");
+				var subtotal = $("#subtotal");
+				var tax = $("#tax");
+				var total = $("#total");
 
+				receiptUL.empty();
+				var sum = 0;
+				var timesTax = 0.08875;
 
-	
-
+				orderToBePopulated.forEach(function(element){
+				var receiptLI = $("<li>").attr("class", "receiptItem");
+				receiptLI.append(element.name +" "+element.price);
+				receiptUL.append(receiptLI);
+				sum += element.price
+			});
+				subtotal.val(sum)
+				tax.val(Math.round((sum * timesTax)*100)/100)
+				total.val(Math.round((sum + (sum * timesTax))*100)/100 )
+		};
 });//END OF jQUERY
 
 
