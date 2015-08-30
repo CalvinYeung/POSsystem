@@ -27,7 +27,6 @@ jQuery(function(){
 	{name: "Smither's Chocolate Smothered Cashews", price: 0.65},
 	];
 
-	
 /////////////////////////////////////////////////
 	// Populate the menu with Pieces of Candy
 	var menu = $("#menu");
@@ -44,7 +43,6 @@ jQuery(function(){
 
 	makeMenu();
 /////////////////////////////////////////////////
-	
 	var newOrderButton = $("#newOrderButton");
 	var newOrderUL = $("#newOrderUL");
 
@@ -52,7 +50,7 @@ jQuery(function(){
 	newOrderButton.on("click", function(event){
 		event.preventDefault();
 		var customerName = prompt("What name would you like under your order?");
-		orderArray.push({customerName:customerName, items:[], price:[]});
+		orderArray.push({customerName:customerName, items:[]});
 		var newOrderLI = $("<button>", {class: "newOrderLI", id: orderArray.length -1});
 
 		//appending
@@ -60,33 +58,29 @@ jQuery(function(){
 		newOrderUL.append(newOrderLI);
 		console.log(orderArray);
 
-		newOrderLI.on("click",function(event){
-		var id = $(event.currentTarget).attr("id");
-		console.log(orderArray[id]);
-		});
+		//clicking the openOrders
+		var orderToBePopulated = newOrderLI.on("click",function(event){
+			var id = $(event.currentTarget).attr("id");
+			 console.log(orderArray[id].items)
+			 return orderArray[id].items
+			});
 
-		//opens the order object
-	 	// $(".newOrderLI:last-child").on("click",function(event){
-			//  var id = $(event.currentTarget).attr("id");
-			//  console.log(orderArray[id].name);
-			// });
-	});
-
-	$(".menuItem").on("click", function(event){
+		$(".menuItem").on("click", function(event){
 		event.preventDefault();
 		var receiptUL = $("#receipt");
 		var id = $(event.currentTarget).attr("id");
+		orderToBePopulated.push(candy[id])
 		console.log(candy[id]);
 
-		var receiptLI = $("<li>").attr("class", "receiptItem");
-		receiptLI.append(candy[id].name +" "+candy[id].price);
-		receiptUL.append(receiptLI);
+		// var receiptLI = $("<li>").attr("class", "receiptItem");
+		// receiptLI.append(candy[id].name +" "+candy[id].price);
+		// receiptUL.append(receiptLI);
 	})
 
-	 
+	});
 
 
-
+	
 
 });//END OF jQUERY
 
