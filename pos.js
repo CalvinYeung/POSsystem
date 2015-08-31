@@ -79,9 +79,6 @@ jQuery(function(){
 		})
 
 		var payButton = $("#payButton");
-
-
-
 		var showOrder = function(){
 				var receiptUL = $("#receipt");
 				var subtotal = $("#subtotal");

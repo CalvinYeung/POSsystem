@@ -172,9 +172,9 @@ center{
 }
 
 #music{
-	position: fixed;
-	right: 17.5%;
-	bottom: 45.8%;
+	position: relative;
+	right: 28%;
+	bottom: 10%;
 	border: solid 2px;
 	border-color: blue;
 	border-radius: 20px;
