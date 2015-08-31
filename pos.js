@@ -78,6 +78,10 @@ jQuery(function(){
 
 		})
 
+		var payButton = $("#payButton");
+
+
+
 		var showOrder = function(){
 				var receiptUL = $("#receipt");
 				var subtotal = $("#subtotal");
@@ -93,10 +97,17 @@ jQuery(function(){
 				receiptLI.append(element.name +" "+element.price);
 				receiptUL.append(receiptLI);
 				sum += element.price
+
 			});
 				subtotal.val(sum)
 				tax.val(Math.round((sum * timesTax)*100)/100)
 				total.val(Math.round((sum + (sum * timesTax))*100)/100 )
+
+				payButton.on("click", function(event){
+					event.preventDefault()
+					var getMoney = prompt("How much you got?");
+					alert("your change is " + parseInt(getMoney) - total.val())
+				})
 		};
 });//END OF jQUERY
 

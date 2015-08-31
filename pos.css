@@ -37,17 +37,23 @@ center{
 	color:blue;
 }
 .newOrderLI{
-	font-size: 15px;
+	font-size: 25px;
 	position: relative;
 	width: 100%;
 	height: 3em;
 	float: left;
-	color:black;
+	color: red;
+	background-color: black;
 	right:16px;
+	border-color: red;
+}
 
+.newOrderLI:hover{
+	background-color: red;
+	color:black;
 }
 #currentOrderBoxHeader{
-	color:blue;
+	color: greenyellow;
 	}
 #currentOrderBox{
 	border-style: solid;
@@ -67,16 +73,9 @@ center{
 
 .receiptItem{
 	text-align: center;
-}
-
-#totalForm{
-	position: relative;
-	color: white ;
-	font-weight: bold;
-	position: relative;
-	top: 67%;
-	width: 100%;
-	height: 12%;
+	list-style: none;
+	 font-size: 22px;
+	 color: yellow;
 }
 
 .total{
@@ -84,42 +83,10 @@ center{
 }
 #totalDiv{
 	position: relative;
-	right:34px;
+	text-align: right;
 	width: 100%;
+	font-size: 20px;
 	
-}
-#subtotalLabel{
-	position: relative;
-	left: 29%;
-}
-#subtotal{
-	position: relative;
-	left:32%;
-	font-weight: bold;
-	font-size: 100%;
-}
-
-#taxLabel{
-	position: relative;
-	left: 31.5%;
-}
-#tax{
-	position: relative;
-	left:34.9%;
-	font-weight: bold;
-	font-size: 100%;
-}
-
-#totalLabel{
-	position: relative;
-	left: 30.7%;
-}
-
-#total{
-	position: relative;
-	left:34%;
-	font-weight: bold;
-	font-size: 100%;
 }
 
 #buttonBox{
@@ -141,13 +108,15 @@ center{
 	height: 5em;
 	float: left;
 	color:red;
+	background-color: pink;
+	font-size: 12px;
 }
 .button:hover{
 	background-color:blue;
 }
 
 #candyMenuHeader{
-	color:blue;
+	color:navy;
 }
 #menuBox{
 	border-style: solid;
@@ -179,7 +148,7 @@ center{
 	float: left;
 	background-color: red;
 }
-#menuItem:hover{
+.menuItem:hover{
 	background-color:yellow;
 }
 
@@ -203,5 +172,15 @@ center{
 }
 
 #music{
-	padding: 0 auto;
+	position: fixed;
+	right: 17.5%;
+	bottom: 45.8%;
+	border: solid 2px;
+	border-color: blue;
+	border-radius: 20px;
+	width:93px;
+	height:81px; 
+ 
+	
+
 }
