@@ -31,7 +31,7 @@ center{
 	float:left;
 	background-color: rgba(153, 255, 255, 0.6);
 	width: 10%;
-	height: 550px;
+	height: 50%;
 }
 #openOrderHeader{
 	color:blue;
@@ -63,7 +63,7 @@ center{
 	text-align: center;
 	float:left;
 	width: 43%;
-	height: 550px;
+	height: 50%;
 }
 #receiptContainer{
 	position: relative;
@@ -125,7 +125,7 @@ center{
 	text-align: center;
 	float:left;
 	width: 45%;
-	height: 550px;
+	height: 50%;
 	border-radius: 20px;
 }
 
