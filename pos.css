@@ -161,7 +161,8 @@ center{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: none;
-  position: relative;
+  position: fixed;
+  float: right;
   bottom: 5px;
   font: normal 30px/normal "Warnes", Helvetica, sans-serif;
   color: rgba(0,255,255,1);

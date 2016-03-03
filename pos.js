@@ -105,6 +105,7 @@ jQuery(function(){
 					var getMoney = prompt("How much you got?");
 					console.log(getMoney)
 					alert("your change is " + (getMoney - total.val()).toFixed(2))
+					event.preventDefault();
 				})
 		};
 });//END OF jQUERY
