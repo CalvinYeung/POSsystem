@@ -103,7 +103,8 @@ jQuery(function(){
 				payButton.on("click", function(event){
 					event.preventDefault()
 					var getMoney = prompt("How much you got?");
-					alert("your change is " + parseInt(getMoney) - total.val())
+					console.log(getMoney)
+					alert("your change is " + (getMoney - total.val()).toFixed(2))
 				})
 		};
 });//END OF jQUERY
