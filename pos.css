@@ -1,12 +1,20 @@
 body{
-	background-image: url(http://ngm.nationalgeographic.com/2013/08/sugar/img/06-candy-670.jpg);
+	background-image: url(https://ad23.asmrc.org/sites/default/files/districts/ad23/media/featured-news/10689-23_Patterson_featurednews_candy_10689.jpg);
+	background-size: cover;
+	width: 100%;
 }
-center{
+
+label {
+	color: white;
+}
+
+.storeSign{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: none;
-  font: normal 60px/normal "Warnes", Helvetica, sans-serif;
+  font-size: 80px;
+  font-family: 'Shadows Into Light', cursive; 
   color: rgba(255,255,255,1);
   text-decoration: normal;
   text-align: center;
@@ -19,65 +27,60 @@ center{
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-.hidden{
-	
-}
 
-#openOrderBox{
+
+.openOrderBox{
 	border-style: solid;
 	border-color: yellow;
 	border-radius: 20px;
 	text-align: center;
-	float:left;
 	background-color: rgba(153, 255, 255, 0.6);
-	width: 10%;
-	min-width: 100px;
-	height: 50%;
 }
 #openOrderHeader{
 	color:blue;
+	font-family: 'Fjalla One', sans-serif;
+}
+#newOrderUL{
+	text-align: center;
 }
 .newOrderLI{
-	font-size: 25px;
-	position: relative;
-	width: 100%;
-	height: 3em;
-	float: left;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 20px;
 	color: red;
-	background-color: black;
-	right:16px;
+	background-color: rgba(255, 255, 51, 0.8);
 	border-color: red;
+	word-wrap: break-word;
+	width: 100%;
 }
 
 .newOrderLI:hover{
 	background-color: red;
 	color:black;
 }
-#currentOrderBoxHeader{
+.currentOrderBoxHeader{
 	color: greenyellow;
+	font-family: 'Fjalla One', sans-serif;
 	}
-#currentOrderBox{
+.currentOrderBox{
 	border-style: solid;
 	border-color: red;
 	border-radius: 20px;
 	background-color: rgba(255, 0, 255, 0.6);
 	text-align: center;
-	float:left;
-	width: 43%;
-	min-width: 450px;
-	height: 50%;
+	margin-bottom: 0%;
 }
 #receiptContainer{
-	position: relative;
-		width: 100%;
-	height: 330px;
+	margin-bottom: 2px;
+	overflow-y:scroll-hidden; overflow-x:hidden; height:300px;
 }
 
 .receiptItem{
+	font-family: 'Fjalla One', sans-serif;
 	text-align: center;
 	list-style: none;
-	 font-size: 22px;
-	 color: yellow;
+	font-size: 22px;
+	color: yellow;
+	margin-right: 10px;
 }
 
 .total{
@@ -86,84 +89,61 @@ center{
 #totalDiv{
 	position: relative;
 	text-align: right;
-	width: auto;
 	font-size: 20px;
-	
+	font-family: 'Fjalla One', sans-serif;
 }
 
-#buttonBox{
-	position: relative;
-	top: 1%;
-	width: 99%;
-	height: 10%;
-	border-style: solid;
-	border-color: black;
-	border-radius: 20px;
-}
 
-.button{
-	border-style: solid;
-	border-color: blue;
-	border-radius: 20px;
-	position: relative;
-	width: 25%;
-	height: 5em;
-	float: left;
-	color:red;
-	background-color: pink;
-	font-size: 12px;
-}
 .button:hover{
 	background-color:blue;
 }
 
 #candyMenuHeader{
 	color:navy;
+	font-family: 'Fjalla One', sans-serif;
 }
-#menuBox{
+.menuBox{
 	border-style: solid;
 	border-color: blue;
 	background-color: rgba(255, 255, 51, 0.6);
 	text-align: center;
-	float:right;
-	min-width: 450px;
-	width: 45%;
-	height: 50%;
 	border-radius: 20px;
+	padding-bottom: 2%;
 }
 
-#menu{
+.buttonBox {
+	margin-bottom: 3%;
+	font-family: 'Fjalla One', sans-serif;
+}
+.currentOrderButton {
+
+}
+
+.menu{
 	border:solid 1px;
-	width: 100%;
-	margin: 0 auto;
 }
 
 .menuItem{
+	padding: 3px;
 	font-size: 15px;
 	font-weight: bold;
-	margin-left: 3px;
-	margin-top: 3px;
 	border: solid 2px;
 	border-color: blue;
 	border-radius: 20px;
-	width:  108.4px;
-	height: 90px;
-	float: left;
 	background-color: red;
+	height: 75px;
+	font-family: 'Fjalla One', sans-serif;
 }
 .menuItem:hover{
 	background-color:yellow;
 }
 
 #trademark{
-	text-align: center;
-	-webkit-box-sizing: border-box;
+  text-align: center;
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: none;
-  position: fixed;
-  float: right;
-  bottom: 5px;
   font: normal 30px/normal "Warnes", Helvetica, sans-serif;
   color: rgba(0,255,255,1);
   text-decoration: normal;
@@ -177,16 +157,3 @@ center{
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-#music{
-	position: relative;
-	right: 28%;
-	bottom: 10%;
-	border: solid 2px;
-	border-color: blue;
-	border-radius: 20px;
-	width:93px;
-	height:81px; 
- 
-	
-
-}

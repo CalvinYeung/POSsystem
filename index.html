@@ -5,39 +5,44 @@
 	<link rel="stylesheet" href="pos.css" />
     <script type="text/javascript" src= "http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src= "./pos.js"></script>
+    
     <!-- Link to BootStrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- FONTS  -->
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-  <center>Calvin's Candy Shop</center>
+<h1 class="storeSign">Calvin's Candy Shop</h1>
 
+<div class="container">
+	<div class="row">
+		<!-- OPEN ORDERS -->
+		<div class="col-md-2 openOrderBox">
+			<h1 id="openOrderHeader">Open Orders</h1>
+			<div id="newOrderUL">
+			</div>
+		</div>
 
-	<!-- OPEN ORDERS -->
-	<div id="openOrderBox">
-		<h1 id="openOrderHeader">Open Orders</h1>
-			
-			<ul id="newOrderUL">
-				
-				<!-- Use jQuery to create LI for each order taken -->
-				
-			</ul>
+		<!-- CURRENT ORDERS -->
+		<div class="col-md-4 currentOrderBox">
 
-	</div>
+			<h1 class="currentOrderBoxHeader">Current Order
+			</h1>
 
-	<!-- CURRENT ORDERS -->
-	<div id="currentOrderBox">
-			<h1 id="currentOrderBoxHeader">Current Order</h1>
+			<div id="receiptContainer">
+				<ul id="receipt">
+					<div class="row">
 
-				<div id="receiptContainer">
-					<ul id="receipt">
-					
-					</ul>
-				</div>
+					</div>
+				</ul>
+			</div>
 
 			<div id="totalDiv">
 				<form id="totalForm">
-					<label id="subtotalLabel">Subtotal:</label>
+					<label id="subtotalLabel">Sub:</label>
 					<input type="text" placeholder="$0.00" id="subtotal" class="total"><br>
 
 					<label id="taxLabel">Tax:</label>
@@ -48,22 +53,22 @@
 				</form>
 			</div>
 
-			<form id="buttonBox">
-				<button id="newOrderButton"   class="col-xs-8 col-sm-4 btn btn-default btn-lg" >NEW ORDER</button>
-				<button id="removeOrderbutton"class="col-xs-8 col-sm-4 btn btn-default btn-lg" >REMOVE ORDER</button>
-				<button id="payButton" 		  class="col-xs-8 col-sm-4 btn btn-default btn-lg" >PAY</button>
-			</form>
-	</div>
+			<div class="row buttonBox">
+				<button id="newOrderButton"   class="col-sm-4 btn btn-default btn-sm currentOrderButton" >NEW ORDER</button>
+				<button id="removeOrderbutton"class="col-sm-4 btn btn-default btn-sm currentOrderButton" >REMOVE ORDER</button>
+				<button id="payButton" 		  class="col-sm-4 btn btn-default btn-sm currentOrderButton" >PAY</button>
+			</div>
+		</div>
 
-	<div id="menuBox">
-		<h1 id="candyMenuHeader">Candy Menu</h1>
-		<form id="menu">
-			
-			<!-- MENU ITEMS GO HERE -->
-		</form>
+		<!-- Menu -->
+		<div class="col-md-6 menuBox">
+			<h1 id="candyMenuHeader">Candy Menu</h1>
+			<div class="menu">
+			</div>
+		</div>
+		
 	</div>
+</div>
 <p id="trademark">&#0153;Calvin's Candy Shop</p>
-
-
 </body>
 </html>
